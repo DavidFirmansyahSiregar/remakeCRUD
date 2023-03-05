@@ -6,7 +6,7 @@ export const MainRoutes = () => {
     return(
         <Router>
             <Routes>
-                <Route path="/" element={<Layouting/>}/>
+                <Route index path="/" element={<Layouting/>}/>
                 <Route path="/create" element={<Create />} />
                 <Route path="/delete" element={<Delete />} />
                 <Route path="/Update" element={<Update />} />
