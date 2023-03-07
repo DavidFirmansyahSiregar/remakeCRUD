@@ -6,11 +6,13 @@ export const MainRoutes = () => {
     return(
         <Router>
             <Routes>
-                <Route index path="/" element={<Layouting/>}/>
-                <Route path="/create" element={<Create />} />
-                <Route path="/delete" element={<Delete />} />
-                <Route path="/Update" element={<Update />} />
-                <Route path="/read" element={<Read />} />
+            <Route path="/" element={<Layouting/>}>
+                    <Route path="/create" element={<Create />} />
+                    <Route path="/delete" element={<Delete />} />
+                    <Route path="/Update" element={<Update />} />
+                    <Route path="/read" element={<Read />} />
+                    </Route>
+
             </Routes>
         </Router>
     )

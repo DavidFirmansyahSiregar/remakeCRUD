@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate, Link } from 'react-router-dom';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import './layouting.css';
 import { PlusOutlined, InfoOutlined, DiffOutlined, DeleteOutlined} from '@ant-design/icons';
@@ -44,18 +44,20 @@ export const Layouting = () => {
   {
     key: '2',
     icon: <InfoOutlined />,
-    label: 'Read',
-    Path: '/read',
+    label: <Link>Read</Link> ,
+    path: '/read',
   },
   {
     key: '3',
     icon: <DiffOutlined />,
     label: 'Update',
+    path: '/update',
   },
   {
     key: '4',
     icon: <DeleteOutlined />,
     label: 'Delete',
+    path: '/delete',
   },
   ]
 
@@ -74,7 +76,7 @@ export const Layouting = () => {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={['4']}
-          menuData={menuData}
+          items={menuData}
         />
       </Sider>
       <Layout>
@@ -104,9 +106,11 @@ export const Layouting = () => {
             <Breadcrumb.Item>User</Breadcrumb.Item>
             <Breadcrumb.Item>Bill</Breadcrumb.Item>
           </Breadcrumb>
-            <Outlet />
+           aaaa
             
           </div>
+          
+          <Outlet />
         </Content>
         <Footer
           style={{
