@@ -1,31 +1,89 @@
-import React, { useState } from 'react';
-import { Button, Checkbox, Form } from 'antd';
+import React, { useState } from "react";
+import { Button, Form, Input, InputNumber } from "antd";
 
 export const Create = () => {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [checkbox, setCheckbox] = useState(false);
-    const postData = () => {
-        console.log(firstName);
-        console.log(lastName);
-        console.log(checkbox);
-    }
-    return (
-        <div>
-            <Form className="create-form">
-                <Form.Field>
-                    <label>First Name</label>
-                    <input placeholder='First Name' onChange={(e) => setFirstName(e.target.value)}/>
-                </Form.Field>
-                <Form.Field>
-                    <label>Last Name</label>
-                    <input placeholder='Last Name' onChange={(e) => setLastName(e.target.value)}/>
-                </Form.Field>
-                <Form.Field>
-                    <Checkbox label='I agree to the Terms and Conditions' onChange={(e) => setCheckbox(!checkbox)}/>
-                </Form.Field>
-                <Button onClick={postData} type='submit'>Submit</Button>
-            </Form>
-        </div>
-    )
-}
+  const formRef = React.useRef(null);
+  const [fullName, setFullName] = useState("");
+  const [userName, setUserName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [val, setVal] = useState("");
+  // const [checkbox, setCheckbox] = useState(false);
+  const postData = () => {
+    console.log(fullName);
+    console.log(userName);
+    console.log(phoneNumber);
+    // console.log(checkbox);
+  };
+//   const handleChange = (e) => {
+//     const regex = /^[0-9\b]+$/;
+//     if (e.target.value === "" || regex.test(e.target.value))
+//     {
+//       setVal(e.target.value);
+//       setPhoneNumber(e.targe.value);
+//     }
+//   };
+  const FormLayout = {
+    labelCol: {
+      span: 8,
+    },
+    wrapperCol: {
+      span: 16,
+    },
+  };
+  const tailLayout = {
+    wrapperCol: {
+      offset: 8,
+      span: 16,
+    },
+  };
+  const onReset = () => {
+    formRef.current?.resetFields();
+  };
+  return (
+    <div>
+      <Form 
+        {...FormLayout}
+        style={{
+          maxWidth: 600,
+        }}
+      >
+        <Form.Item label="Full Name" type='Name'>
+          <Input
+            placeholder="FullName"
+            onChange={(e) => setFullName(e.target.value)}
+            allowClear
+          />
+        </Form.Item>
+        <Form.Item label="UserName">
+          <Input
+            placeholder="UserName"
+            onChange={(e) => setUserName(e.target.value)}
+            allowClear
+          />
+        </Form.Item>
+        <Form.Item label="Phone Number">
+          <Input
+            placeholder="PhoneNumber"
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            // value={val}
+            allowClear
+          />
+        </Form.Item>
+        <Form.Item {...tailLayout}>
+          <Button onClick={postData} type="primary">
+            Submit
+          </Button>
+          <Button
+            onClick={onReset}
+            htmlType="button"
+            style={{
+              marginLeft: 10,
+            }}
+          >
+            cancel
+          </Button>
+        </Form.Item>
+      </Form>
+    </div>
+  );
+};
