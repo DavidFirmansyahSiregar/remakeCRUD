@@ -46,8 +46,7 @@ export const Layouting = () => {
       name: "create",
       icon: <PlusOutlined />,
       label: <Link>Create</Link>,
-      ketpath: "/create",
-    
+      path: "/create",
     },
     {
       key: "2",
@@ -113,7 +112,7 @@ export const Layouting = () => {
                 margin: "16px 0",
               }}
             >
-              <Breadcrumb.Item>User</Breadcrumb.Item>
+              <Breadcrumb.Item></Breadcrumb.Item>
               <Breadcrumb.Item>Bill</Breadcrumb.Item>
             </Breadcrumb>
             <Outlet />
@@ -123,7 +122,9 @@ export const Layouting = () => {
           style={{
             textAlign: "center",
           }}
-        ></Footer>
+        >
+          
+        </Footer>
       </Layout>
     </Layout>
   );
