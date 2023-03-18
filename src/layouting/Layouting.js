@@ -8,7 +8,7 @@ import {
   DiffOutlined,
   DeleteOutlined,
 } from "@ant-design/icons";
-// import { Create, Delete, Read, Update } from "../components";
+import { Create, Delete, Read, Update } from "../components";
 
 // function getItem(label, key, icon, children) {
 //   return {
@@ -123,7 +123,6 @@ export const Layouting = () => {
             textAlign: "center",
           }}
         >
-          
         </Footer>
       </Layout>
     </Layout>

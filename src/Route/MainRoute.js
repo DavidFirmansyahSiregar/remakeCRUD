@@ -9,7 +9,7 @@ export const MainRoutes = () => {
         <Route exact path="/" element={<Layouting />}>
           <Route path="/create" element={<Create />} />
           <Route path="/delete" element={<Delete />} />
-          <Route path="/Update" element={<Update />} />
+          <Route path="/update" element={<Update />} />
           <Route path="/read" element={<Read />} />
         </Route>
       </Routes>
