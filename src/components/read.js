@@ -1,28 +1,7 @@
-import { Space, Table, Tag } from "antd";
+import { Space, Table, } from "antd";
+import { data } from "./dataemployee";
 const { Column, ColumnGroup } = Table;
-const data = [
-  {
-    key: "1",
-    fullName: "Joe",
-    userName: "D4",
-    phoneNumber: "123",
-    age: "20",
-  },
-  {
-    key: "2",
-    fullName: "Joe",
-    userName: "D4",
-    phoneNumber: "123",
-    age: "20",
-  },
-  {
-    key: "3",
-    fullName: "Joe",
-    userName: "D4",
-    phoneNumber: "123",
-    age: "20",
-  },
-];
+
 
 export const Read = () => (
   <Table dataSource={data}>
@@ -37,7 +16,7 @@ export const Read = () => (
       key="action"
       render={(_, record) => (
         <Space size="middle">
-          <a>Invite {record.lastName}</a>
+          <a>Invite {record.userName}</a>
           <a>Delete</a>
         </Space>
       )}
